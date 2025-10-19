@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+import AppSidebar from "@/components/app-sidebar";
 
 export const metadata: Metadata = {
   title: "Helper",
@@ -13,7 +19,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko-KR">
-      <body>{children}</body>
+      <body>
+        <SidebarProvider>
+          <AppSidebar />
+          <SidebarInset>
+            <header className="p-3 border-b">
+              <SidebarTrigger />
+            </header>
+            <main className="p-3">{children}</main>
+          </SidebarInset>
+        </SidebarProvider>
+      </body>
     </html>
   );
 }

@@ -79,3 +79,60 @@ shadcn/ui component aliases (configured in `components.json`):
 ## Adding shadcn/ui Components
 
 When adding new shadcn/ui components, they should be placed in `src/components/ui/` and can be referenced using the `@/components/ui` alias.
+
+## Git Commit Convention
+
+This project follows **Conventional Commits** specification. All commit messages must be written in Korean for subject and body.
+
+### Commit Message Format
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+### Types
+- `feat`: 새로운 기능 추가
+- `fix`: 버그 수정
+- `docs`: 문서 변경
+- `style`: 코드 포맷팅, 세미콜론 누락 등 (코드 동작에 영향 없음)
+- `refactor`: 코드 리팩토링 (기능 변경 없음)
+- `test`: 테스트 추가 또는 수정
+- `chore`: 빌드 작업, 패키지 매니저 설정 등
+- `perf`: 성능 개선
+
+### Scope (optional)
+변경된 범위를 나타냅니다 (예: `auth`, `ui`, `api`, `config`)
+
+### Examples
+```
+feat(auth): 사용자 인증 기능 추가
+
+JWT 토큰 기반 인증 시스템을 구현했습니다.
+- 로그인/로그아웃 기능
+- 토큰 갱신 로직
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+```
+fix(ui): 다크모드 토글 버튼 오류 수정
+
+다크모드 전환 시 색상이 제대로 적용되지 않던 문제를 해결했습니다.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+```
+docs: README에 설치 가이드 추가
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```

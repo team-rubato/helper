@@ -84,6 +84,24 @@ When adding new shadcn/ui components, they should be placed in `src/components/u
 
 This project follows **Conventional Commits** specification. All commit messages must be written in Korean for subject and body.
 
+### Pre-commit Checklist
+
+**IMPORTANT:** Before creating any commit, you MUST run the following commands and ensure they pass:
+
+1. **Run lint:**
+   ```bash
+   npm run lint
+   ```
+   Ensure there are no linting errors.
+
+2. **Run build:**
+   ```bash
+   npm run build
+   ```
+   Ensure the build completes successfully without errors.
+
+3. **Only proceed with commit if both checks pass.**
+
 ### Commit Message Format
 ```
 <type>(<scope>): <subject>

@@ -178,7 +178,11 @@ const totalColumns: ColumnDef<TotalDataType>[] = [
       };
       return (
         <div className="capitalize">
-          <Button variant="ghost" className="cursor-pointer font-semibold" onClick={onCopy}>
+          <Button
+            variant="ghost"
+            className="cursor-pointer font-semibold"
+            onClick={onCopy}
+          >
             {formattedNum(value)}PG
           </Button>
         </div>
@@ -197,7 +201,11 @@ const totalColumns: ColumnDef<TotalDataType>[] = [
       };
       return (
         <div className="capitalize">
-          <Button variant="ghost" className="cursor-pointer font-semibold" onClick={onCopy}>
+          <Button
+            variant="ghost"
+            className="cursor-pointer font-semibold"
+            onClick={onCopy}
+          >
             {formattedNum(value)}EA
           </Button>
         </div>
@@ -216,7 +224,11 @@ const totalColumns: ColumnDef<TotalDataType>[] = [
       };
       return (
         <div className="capitalize">
-          <Button variant="ghost" className="cursor-pointer font-semibold" onClick={onCopy}>
+          <Button
+            variant="ghost"
+            className="cursor-pointer font-semibold"
+            onClick={onCopy}
+          >
             {formattedNum(value)}KGS
           </Button>
         </div>
@@ -235,7 +247,11 @@ const totalColumns: ColumnDef<TotalDataType>[] = [
       };
       return (
         <div className="capitalize">
-          <Button variant="ghost" className="cursor-pointer font-semibold" onClick={onCopy}>
+          <Button
+            variant="ghost"
+            className="cursor-pointer font-semibold"
+            onClick={onCopy}
+          >
             {formattedNum(value)}KGS
           </Button>
         </div>
@@ -311,6 +327,7 @@ const DataTable = ({ data }: DataTableProps) => {
           onChange={(event) =>
             table.getColumn("partNo")?.setFilterValue(event.target.value)
           }
+          onFocus={(e) => e.target.select()}
           className="max-w-sm"
         />
       </div>
@@ -372,15 +389,20 @@ const DataTable = ({ data }: DataTableProps) => {
               {totalTable.getHeaderGroups().map(({ id, headers }) => {
                 return (
                   <TableRow key={id}>
-                    {headers.map(({ id, isPlaceholder, column, getContext }) => {
-                      return (
-                        <TableHead key={id}>
-                          {isPlaceholder
-                            ? null
-                            : flexRender(column.columnDef.header, getContext())}
-                        </TableHead>
-                      );
-                    })}
+                    {headers.map(
+                      ({ id, isPlaceholder, column, getContext }) => {
+                        return (
+                          <TableHead key={id}>
+                            {isPlaceholder
+                              ? null
+                              : flexRender(
+                                  column.columnDef.header,
+                                  getContext()
+                                )}
+                          </TableHead>
+                        );
+                      }
+                    )}
                   </TableRow>
                 );
               })}

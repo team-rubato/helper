@@ -6,6 +6,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import AppSidebar from "@/components/app-sidebar";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Helper",
@@ -29,6 +30,7 @@ export default function RootLayout({
             <main className="p-3">{children}</main>
           </SidebarInset>
         </SidebarProvider>
+        <Toaster richColors />
       </body>
     </html>
   );

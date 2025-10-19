@@ -20,9 +20,9 @@ const TradingItems = [
     url: "/trading/",
   },
   {
-    title: "패킹",
+    title: "AK Form",
     icon: PackageCheck,
-    url: "/trading/pack",
+    url: "/trading/akform",
   },
 ];
 

@@ -270,6 +270,8 @@ type DataTableProps = {
 };
 
 const DataTable = ({ data }: DataTableProps) => {
+  const [filterInput, setFilterInput] = useState("");
+
   const table = useReactTable({
     data,
     columns,
@@ -323,10 +325,12 @@ const DataTable = ({ data }: DataTableProps) => {
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter Part No..."
-          value={(table.getColumn("partNo")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("partNo")?.setFilterValue(event.target.value)
-          }
+          value={filterInput}
+          onChange={(event) => {
+            const value = event.target.value;
+            setFilterInput(value);
+            table.getColumn("partNo")?.setFilterValue(value.trim());
+          }}
           onFocus={(e) => e.target.select()}
           className="max-w-sm"
         />
